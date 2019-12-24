@@ -1,0 +1,82 @@
+potential-bugs:
+active: true
+
+  UnsafeCast:
+    active: true # We know what we're doing.
+
+complexity:
+  active: true
+  ComplexCondition:
+    active: true
+    threshold: 4
+  ComplexInterface:
+    active: false
+    threshold: 10
+    includeStaticDeclarations: false
+  ComplexMethod:
+    active: true
+    threshold: 15
+    ignoreSingleWhenExpression: false
+    ignoreSimpleWhenEntries: false
+    ignoreNestingFunctions: false
+    nestingFunctions: run,let,apply,with,also,use,forEach,isNotNull,ifNull
+  LabeledExpression:
+    active: false
+    ignoredLabels: ""
+  LargeClass:
+    active: true
+    threshold: 250
+  LongMethod:
+    active: true
+    threshold: 20
+  LongParameterList:
+    active: true
+    threshold: 4
+    ignoreDefaultParameters: false
+  MethodOverloading:
+    active: false
+    threshold: 6
+  NestedBlockDepth:
+    active: true
+    threshold: 4
+  StringLiteralDuplication:
+    active: false
+    excludes: "**/test/**,**/androidTest/**,**/*.Test.kt,**/*.Spec.kt,**/*.Spek.kt"
+    threshold: 3
+    ignoreAnnotation: true
+    excludeStringsWithLessThan5Characters: true
+    ignoreStringsRegex: '$^'
+  TooManyFunctions:
+    active: true
+    excludes: "**/test/**,**/androidTest/**,**/*.Test.kt,**/*.Spec.kt,**/*.Spek.kt"
+    thresholdInFiles: 3
+    thresholdInClasses: 3
+    thresholdInInterfaces: 3
+    thresholdInObjects: 3
+    thresholdInEnums: 3
+    ignoreDeprecated: false
+    ignorePrivate: false
+    ignoreOverridden: false
+
+
+style:
+  MaxLineLength:
+    active: true
+
+comments:
+  UndocumentedPublicClass:
+    active: false
+  UndocumentedPublicFunction:
+    active: false
+
+naming:
+  InvalidPackageDeclaration:
+    active: true
+
+build:
+  maxIssues: 3
+  weights:
+  # complexity: 2
+  # LongParameterList: 1
+  # style: 1
+  # comments: 1
